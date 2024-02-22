@@ -195,7 +195,7 @@ CREATE TABLE `s8f7h_apiportal_cache` (
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `key` (`key`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -248,7 +248,7 @@ CREATE TABLE `s8f7h_apiportal_db_versioning` (
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `s8f7h_apiportal_db_versioning_date_index` (`date`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -273,7 +273,7 @@ CREATE TABLE `s8f7h_apiportal_jgroup_email` (
   `emailPattern` varchar(255) NOT NULL,
   KEY `jgroupId` (`jgroupId`),
   CONSTRAINT `s8f7h_apiportal_jgroup_email_fk0` FOREIGN KEY (`jgroupId`) REFERENCES `s8f7h_usergroups` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -299,7 +299,7 @@ CREATE TABLE `s8f7h_apiportal_jgroup_mngr_org` (
   KEY `mngrOrgId` (`mngrOrgId`),
   CONSTRAINT `s8f7h_apiportal_jgroup_mngr_org_fk0` FOREIGN KEY (`jgroupId`) REFERENCES `s8f7h_usergroups` (`id`),
   CONSTRAINT `s8f7h_apiportal_jgroup_mngr_org_fk1` FOREIGN KEY (`mngrOrgId`) REFERENCES `s8f7h_apiportal_mngr_orgs` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -326,7 +326,7 @@ CREATE TABLE `s8f7h_apiportal_jgroup_mngr_roles` (
   KEY `mngrRoleId` (`mngrRoleId`),
   CONSTRAINT `s8f7h_apiportal_jgroup_mngr_roles_fk0` FOREIGN KEY (`jgroupId`) REFERENCES `s8f7h_usergroups` (`id`),
   CONSTRAINT `s8f7h_apiportal_jgroup_mngr_roles_fk1` FOREIGN KEY (`mngrRoleId`) REFERENCES `s8f7h_apiportal_mngr_roles` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -404,7 +404,7 @@ CREATE TABLE `s8f7h_apiportal_mngr_orgs` (
   `id` int NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -428,7 +428,7 @@ CREATE TABLE `s8f7h_apiportal_mngr_roles` (
   `title` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `title` (`title`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -547,7 +547,7 @@ CREATE TABLE `s8f7h_apiportal_user_role_organization_map` (
   CONSTRAINT `s8f7h_apiportal_user_role_organization_map_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `s8f7h_apiportal_user` (`id`) ON DELETE CASCADE,
   CONSTRAINT `s8f7h_apiportal_user_role_organization_map_ibfk_2` FOREIGN KEY (`organizationId`) REFERENCES `s8f7h_apiportal_apimanager_organization` (`id`),
   CONSTRAINT `s8f7h_apiportal_user_role_organization_map_ibfk_3` FOREIGN KEY (`roleId`) REFERENCES `s8f7h_apiportal_mngr_roles` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
